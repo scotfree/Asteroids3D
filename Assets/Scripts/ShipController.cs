@@ -22,6 +22,17 @@ public class ShipController : MonoBehaviour
         // Lock and hide cursor for FPS-style mouse look
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        // Trigger collider — detects asteroid hits without physics bouncing
+        var col = gameObject.AddComponent<SphereCollider>();
+        col.radius = 0.5f;
+        col.isTrigger = true;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Asteroid>() != null)
+            GameManager.Instance?.GameOver();
     }
 
     void Update()

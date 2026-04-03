@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class BoundarySphere : MonoBehaviour
 {
-    public static float Radius = 50f;
+    public static float Radius = 100f;
 
     Rigidbody rb;
 
