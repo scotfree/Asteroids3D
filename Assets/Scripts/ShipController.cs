@@ -22,16 +22,18 @@ public class ShipController : MonoBehaviour
     void Update()
     {
         var kb = Keyboard.current;
-        float pitch = 0f, yaw = 0f;
-        if (kb.upArrowKey.isPressed)    pitch = -1f;
-        if (kb.downArrowKey.isPressed)  pitch =  1f;
-        if (kb.leftArrowKey.isPressed)  yaw   = -1f;
-        if (kb.rightArrowKey.isPressed) yaw   =  1f;
+        float pitch = 0f, yaw = 0f, roll = 0f;
+        if (kb.wKey.isPressed) pitch = -1f;
+        if (kb.sKey.isPressed) pitch =  1f;
+        if (kb.aKey.isPressed) yaw   = -1f;
+        if (kb.dKey.isPressed) yaw   =  1f;
+        if (kb.qKey.isPressed) roll  =  1f;
+        if (kb.eKey.isPressed) roll  = -1f;
 
         transform.Rotate(
             pitch * rotationSpeed * Time.deltaTime,
             yaw   * rotationSpeed * Time.deltaTime,
-            0f,
+            roll  * rotationSpeed * Time.deltaTime,
             Space.Self
         );
     }
