@@ -5,8 +5,8 @@ public class AsteroidSpawner : MonoBehaviour
     [SerializeField] int count = 15;
     [SerializeField] float minSpeed = 3f;
     [SerializeField] float maxSpeed = 8f;
-    [SerializeField] float minAsteroidRadius = 1.5f;
-    [SerializeField] float maxAsteroidRadius = 4.5f;
+    [SerializeField] float minAsteroidRadius = 4.5f;
+    [SerializeField] float maxAsteroidRadius = 50.0f;
     [SerializeField] float minSpawnDistance = 30f;
 
     void Start()

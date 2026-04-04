@@ -64,6 +64,11 @@ The New Input System is active. All input bindings are defined in `InputSystem_A
 - **Play mode does not save**: any changes made while the game is running are discarded when you stop. Wire up objects outside of Play mode.
 - **The user is new to Unity**: call out steps that are automatic for experienced Unity developers — saving, where to find panels, how to add components, what "resetting a Transform" means, etc.
 
+### Known Unity Editor Input Quirks
+
+- **TAB is consumed by the Unity editor UI** even during Play mode — do not bind gameplay actions to TAB. Use other keys instead.
+- **Left mouse click releases the cursor lock** in the editor when the cursor is locked — Shift keys are more reliable for fire bindings during editor testing.
+
 ### Adding Game Code
 
 All C# game scripts go in `Assets/` (or subdirectories within it). Unity auto-compiles anything in `Assets/` into `Assembly-CSharp`. Editor-only scripts go in `Assets/Editor/` or any folder named `Editor`.
